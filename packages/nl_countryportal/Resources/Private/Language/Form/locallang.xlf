@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-01-04T13:29:27Z" product-name="nl_countryportal">
+        <header/>
+        <body>
+            <trans-unit id="contactUs.element.text-1.properties.label">
+                <source>Full Name</source>
+            </trans-unit>
+            <trans-unit id="contactUs.element.email-1.properties.label">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="contactUs.element.textarea-1.properties.label">
+                <source>Your Message</source>
+            </trans-unit>
+            <trans-unit id="element.contactUs.renderingOptions.submitButtonLabel">
+                <source>Contact</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

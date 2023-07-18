@@ -1,0 +1,12 @@
+TYPO3:
+  CMS:
+    Form:
+      prototypes:
+        standard:
+          formElementsDefinition:
+            Form:
+              renderingOptions:
+                translation:
+                  translationFiles:
+                    # custom translation file
+                    20: 'EXT:nl_countryportal/Resources/Private/Language/Form/locallang.xlf'

@@ -1,0 +1,65 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+  <f:layout name="Content"/>
+
+  <f:section name="Configuration">
+    <flux:form id="testimonials">
+      <flux:form.option.group value="flux"/>
+      <flux:form.option.icon
+              value="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/content/content-menu-card.svg"/>
+      <flux:form.section name="testimonials">
+        <flux:form.object name="testimonial">
+          <flux:field.text name="svg" required="1"/>
+          <flux:field.text name="text" enableRichText="1" required="1"/>
+          <flux:field.input name="author" required="1"/>
+          <flux:field.input name="authorLink" config="{renderType: 'inputLink'}"/>
+        </flux:form.object>
+      </flux:form.section>
+    </flux:form>
+  </f:section>
+
+
+  <f:section name="Preview">
+    <div><strong>{f:translate(key: 'flux.testimonials')}</strong></div>
+    <div>
+      <f:for each="{testimonials}" as="sectionObjects">
+        <div>
+          <em>{sectionObjects.testimonial.author}</em>
+          {sectionObjects.testimonial.text -> f:format.html()}
+        </div>
+      </f:for>
+    </div>
+  </f:section>
+
+  <f:section name="Main">
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <h1 class="text-3xl font-medium title-font text-gray-900 mb-12 text-center">
+          <f:translate key="flux.testimonials"/>
+        </h1>
+        <div class="flex flex-wrap -m-4">
+          <f:for each="{testimonials}" as="sectionObjects">
+            <div class="p-4 md:w-1/2 w-full">
+              <div class="h-full bg-gray-100 p-8 rounded">
+                <f:format.raw>{sectionObjects.testimonial.svg}</f:format.raw>
+                <div class="leading-relaxed mb-6">
+                  {sectionObjects.testimonial.text -> f:format.html()}
+                </div>
+                <f:link.typolink parameter="{sectionObjects.testimonial.authorLink}" class="inline-flex items-center">
+                        <span class="flex-grow flex flex-col">
+                            <span class="title-font font-medium text-gray-900">
+                              {sectionObjects.testimonial.author}
+                            </span>
+                        </span>
+                </f:link.typolink>
+              </div>
+            </div>
+          </f:for>
+        </div>
+      </div>
+    </section>
+  </f:section>
+
+</div>

@@ -1,0 +1,76 @@
+<f:layout name="Blank" />
+
+<f:section name="Configuration">
+  <flux:form id="newsletter">
+    <flux:grid>
+      <flux:grid.row>
+        <flux:grid.column colPos="0" name="main" label="Main" colspan="12" />
+      </flux:grid.row>
+    </flux:grid>
+  </flux:form>
+</f:section>
+
+<f:section name="Main">
+  <!--DMAILER_SECTION_BOUNDARY_-->
+  <style>
+      body {
+          background-color: #ffffff;
+      }
+
+      p,
+      li {
+          font-family: Arial, Verdana, Helvetica, sans-serif;
+          font-size: 13px;
+      }
+
+      ul,
+      li {
+          list-style-type: none;
+      }
+
+      ul {
+          margin-bottom: 16px;
+          margin-top: 0;
+          padding-top: 0;
+          margin-left: 0;
+          padding-left: 0;
+      }
+
+      li {
+          margin-left: 0;
+          padding-left: 0;
+      }
+
+      li a {
+          text-decoration: underline;
+          color: rgb(51, 51, 51);
+      }
+
+      p {
+          margin: 0 0 1em;
+          padding: 0;
+          line-height: 16px;
+      }
+
+      p a {
+          text-decoration: underline;
+          color: rgb(51, 51, 51);
+      }
+
+      img {
+          border: none;
+      }
+  </style>
+
+  <div style="margin: 0 auto; border: 1px solid #eaeaea; width: 600px; padding: 10px;">
+    <v:content.render column="0" />
+    <div class="margin-top: 10px;">
+      <f:link.page pageUid="{v:variable.typoscript(path: 'lib.settings.unsubscribePid')}" absolute="1">
+        <f:translate key="newsletter.unsubscribeLinkLabel" />
+      </f:link.page>
+    </div>
+  </div>
+
+
+  <!--DMAILER_SECTION_BOUNDARY_END-->
+</f:section>

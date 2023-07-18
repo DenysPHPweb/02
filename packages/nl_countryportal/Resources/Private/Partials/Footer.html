@@ -1,0 +1,94 @@
+<footer class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-wrap md:text-left text-center order-first">
+      <div class="lg:w-1/4 md:w-1/2 w-full">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          <f:translate key="footer.cities"/>
+        </h2>
+        <nav class="list-none mb-10">
+          <v:menu pageUid="{v:variable.typoscript(path: 'lib.settings.citiesPid')}">
+            <f:for each="{menu}" as="item">
+              <li>
+                <a href="{item.slug}" class="text-gray-600 hover:text-gray-800">
+                  {f:if(condition: item.nav_title, then: item.nav_title, else: item.title)}
+                </a>
+              </li>
+            </f:for>
+          </v:menu>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          <f:translate key="footer.places"/>
+        </h2>
+        <nav class="list-none mb-10">
+          <v:menu pageUid="{v:variable.typoscript(path: 'lib.settings.placesPid')}">
+            <f:for each="{menu}" as="item">
+              <li>
+                <a href="{item.slug}" class="text-gray-600 hover:text-gray-800">
+                  {f:if(condition: item.nav_title, then: item.nav_title, else: item.title)}
+                </a>
+              </li>
+            </f:for>
+          </v:menu>
+        </nav>
+      </div>
+
+      <div class="lg:w-1/4 md:w-1/2 w-full">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          <f:translate key="footer.external"/>
+        </h2>
+        <nav class="list-none mb-10">
+          <v:menu pageUid="{v:variable.typoscript(path: 'lib.settings.externalPid')}">
+            <f:for each="{menu}" as="item">
+              <li>
+                <a href="{item.url}" target="{item.target}" class="text-gray-600 hover:text-gray-800">
+                  {f:if(condition: item.nav_title, then: item.nav_title, else: item.title)}
+                </a>
+              </li>
+            </f:for>
+          </v:menu>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
+          <f:translate key="footer.newsletterSubscription"/>
+        </h2>
+        <nav class="list-none mb-10">
+          <v:menu pageUid="{v:variable.typoscript(path: 'lib.settings.newsletterSubscriptionPid')}">
+            <f:for each="{menu}" as="item">
+              <li>
+                <a href="{item.slug}" target="{item.target}" class="text-gray-600 hover:text-gray-800">
+                  {f:if(condition: item.nav_title, then: item.nav_title, else: item.title)}
+                </a>
+              </li>
+            </f:for>
+          </v:menu>
+        </nav>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bg-gray-100">
+    <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+      <p class="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
+        ©
+        <f:format.date date="now" format="Y"/>
+        <f:translate key="sitename"/>
+        —
+        <a href="https://netzlabor.co" rel="noopener noreferrer" class="text-gray-600"
+           target="_blank">netzlabor.coding</a>
+      </p>
+      <span class="inline-flex text-sm sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <f:link.page pageUid="{v:variable.typoscript(path: 'lib.settings.dataPrivacyPid')}"
+                             class="text-gray-500">
+                    <v:page.info pageUid="{v:variable.typoscript(path: 'lib.settings.dataPrivacyPid')}" field="title"/>
+                </f:link.page>
+                <f:link.page pageUid="{v:variable.typoscript(path: 'lib.settings.imprintPid')}"
+                             class="ml-3 text-gray-500">
+                    <v:page.info pageUid="{v:variable.typoscript(path: 'lib.settings.imprintPid')}" field="title"/>
+                </f:link.page>
+            </span>
+    </div>
+  </div>
+</footer>

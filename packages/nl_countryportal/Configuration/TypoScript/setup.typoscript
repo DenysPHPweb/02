@@ -1,0 +1,60 @@
+@import 'EXT:nl_countryportal/Configuration/TypoScript/Helper/*.typoscript'
+
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            100 = EXT:nl_countryportal/Configuration/Yaml/CustomFormSetup.yaml
+        }
+    }
+}
+
+plugin.tx_nlcountryportal {
+    view {
+        templateRootPaths.0 = {$plugin.tx_nlcountryportal.view.templateRootPaths.0}
+        partialRootPaths.0 = {$plugin.tx_nlcountryportal.view.partialRootPaths.0}
+        layoutRootPaths.0 = {$plugin.tx_nlcountryportal.view.layoutRootPaths.0}
+    }
+}
+
+page {
+    includeCSS {
+        mainCss = EXT:nl_countryportal/Resources/Public/Css/styles.css
+    }
+
+    includeJSFooter {
+        mainJs = EXT:nl_countryportal/Resources/Public/JavaScript/scripts.js
+
+        alpineJs = https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js
+        alpineJs.external = true
+    }
+
+    meta {
+        x-ua-compatible = ie=edge
+        x-ua-compatible.attribute = http-equiv
+        viewport = width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, shrink-to-fit=no
+    }
+
+    headerData.1611053811 = TEXT
+    headerData.1611053811.value (
+    <link rel="shortcut icon" type="image/x-icon" href="typo3conf/ext/nl_countryportal/Resources/Public/Images/favicon.ico">
+    )
+}
+
+lib.settings {
+    homePid = {$lib.settings.homePid}
+    citiesPid = {$lib.settings.citiesPid}
+    placesPid = {$lib.settings.placesPid}
+    externalPid = {$lib.settings.externalPid}
+    dataPrivacyPid = {$lib.settings.dataPrivacyPid}
+    imprintPid = {$lib.settings.imprintPid}
+    newsletterSubscriptionPid = {$lib.settings.newsletterSubscriptionPid}
+    subscribePid = {$lib.settings.subscribePid}
+    unsubscribePid = {$lib.settings.unsubscribePid}
+}
+
+// Enable TYPO3 Cache
+config.no_cache = 0
+// Enable TYPO3 Indexing
+config.index_enable = 1
+// Set search result page for indexed_search
+plugin.tx_indexedsearch.settings.targetPid = {$lib.settings.searchPid}

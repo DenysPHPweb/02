@@ -1,0 +1,84 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+  <f:layout name="Content" />
+
+  <f:section name="Configuration">
+    <flux:form id="tabs">
+      <flux:form.option.group value="flux" />
+      <flux:form.option.icon value="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/content/content-tab.svg"/>
+
+      <flux:form.sheet name="tab0">
+        <flux:field.text name="tab0.text" label="Text" enableRichText="true" required="0" />
+      </flux:form.sheet>
+
+      <flux:form.sheet name="tab1">
+        <flux:field.text name="tab1.text" label="Text" enableRichText="true" required="0" />
+      </flux:form.sheet>
+
+      <flux:form.sheet name="tab2">
+        <flux:field.text name="tab2.text" label="Text" enableRichText="true" required="0" />
+      </flux:form.sheet>
+
+    </flux:form>
+  </f:section>
+
+  <f:section name="Preview">
+    <div>
+      <strong>{f:translate(key: 'flux.tabs')}</strong>
+    </div>
+    <div>
+      <div>{f:translate(key: 'flux.tabs.sheets.tab0')}</div>
+      <div>{tab0.text -> f:format.raw()}</div>
+
+      <div>{f:translate(key: 'flux.tabs.sheets.tab1')}</div>
+      <div>{tab1.text -> f:format.raw()}</div>
+
+      <div>{f:translate(key: 'flux.tabs.sheets.tab2')}</div>
+      <div>{tab2.text -> f:format.raw()}</div>
+    </div>
+  </f:section>
+
+  <f:section name="Main">
+
+    <section class="text-gray-600 body-font">
+      <div x-data="{ openTab: 1 }" class="container px-5 mx-auto flex flex-wrap flex-col">
+        <div class="flex mx-auto flex-wrap mb-20">
+          <a @click="openTab = 1"
+             :class="openTab === 1 ? 'bg-gray-100 border-green-500 text-green-500 tracking-wider rounded-t' : 'border-gray-200 hover:text-gray-900 tracking-wider'"
+             class="sm:px-6 cursor-pointer py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none">
+            {f:translate(key: 'flux.tabs.sheets.tab0')}
+          </a>
+          <a @click="openTab = 2"
+             :class="openTab === 2 ? 'bg-gray-100 border-green-500 text-green-500 tracking-wider rounded-t' : 'border-gray-200 hover:text-gray-900 tracking-wider'"
+             class="sm:px-6 cursor-pointer py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none">
+            {f:translate(key: 'flux.tabs.sheets.tab1')}
+          </a>
+          <a @click="openTab = 3"
+             :class="openTab === 3 ? 'bg-gray-100 border-green-500 text-green-500 tracking-wider rounded-t' : 'border-gray-200 hover:text-gray-900 tracking-wider'"
+             class="sm:px-6 cursor-pointer py-3 w-1/2 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none">
+            {f:translate(key: 'flux.tabs.sheets.tab2')}
+          </a>
+        </div>
+
+        <div class="flex flex-col w-full">
+          <div x-show="openTab === 1">
+            <div class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              {tab0.text -> f:format.raw()}
+            </div>
+          </div>
+          <div x-show="openTab === 2">
+            <div class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              {tab1.text -> f:format.raw()}
+            </div>
+          </div>
+          <div x-show="openTab === 3">
+            <div class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              {tab2.text -> f:format.raw()}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </f:section>
+</div>

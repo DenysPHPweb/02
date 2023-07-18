@@ -1,0 +1,35 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+<f:section name="main">
+  <h4 class="sm:text-3xl text-2xl title-font font-medium text-gray-900 mt-4 mb-4">
+    <f:translate key="subscription.header">Direct Mail Subscription</f:translate>
+  </h4>
+  <f:form action="subscribe" object="{address}" objectName="address">
+    <f:render partial="Form/Fields/Email" arguments="{objectName: 'address'}" />
+    <f:render partial="Form/SubmitButton" arguments="{defaultLabel: 'Subscribe', translationKey: 'subscription.submit'}" />
+  </f:form>
+  <f:if condition="{settings.subscription.showPrivacyStatement}">
+    <p class="py-2">
+      <f:translate key="subscription.privacyStatement">
+        You can find further information about content, registration, shipping and cancellations in our
+      </f:translate>
+
+      <f:link.typolink parameter="{settings.subscription.privacyStatementLink}" class="text-gray-600">
+        <f:translate key="subscription.privacyStatementLink">
+          data privacy statement
+        </f:translate>
+      </f:link.typolink>
+    </p>
+  </f:if>
+  <f:if condition="{settings.subscription.showUnsubscriptionLink}">
+    <p>
+      <f:link.action action="showUnsubscriptionForm" pageUid="{settings.unsubscription.page}">
+        <f:translate key="subscription.goToUnsubscription">
+          Go to unsubscription
+        </f:translate>
+      </f:link.action>
+    </p>
+  </f:if>
+</f:section>
+</html>

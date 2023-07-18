@@ -1,0 +1,49 @@
+plugin.tx_nlcountryportal {
+    view {
+        templateRootPaths.0 = EXT:nl_countryportal/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:nl_countryportal/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:nl_countryportal/Resources/Private/Layouts/
+    }
+}
+
+styles.templates {
+    templateRootPath = EXT:nl_countryportal/Resources/Private/Templates/FluidStyledContent/
+    partialRootPath = EXT:nl_countryportal/Resources/Private/Partials/FluidStyledContent/
+}
+
+plugin.tx_news {
+    view {
+        templateRootPath = EXT:nl_countryportal/Resources/Private/Templates/
+        partialRootPath = EXT:nl_countryportal/Resources/Private/Partials/
+        layoutRootPath = EXT:nl_countryportal/Resources/Private/Layouts/
+    }
+}
+
+lib.settings {
+    homePid = 1
+    citiesPid = 22
+    placesPid = 17
+    externalPid = 10
+    dataPrivacyPid = 9
+    imprintPid = 8
+    searchPid = 13
+    newsletterSubscriptionPid = 46
+    subscribePid = 47
+    unsubscribePid = 48
+}
+
+
+plugin.tx_indexedsearch {
+    view {
+        templateRootPath = EXT:nl_countryportal/Resources/Private/Templates/
+        partialRootPath = EXT:nl_countryportal/Resources/Private/Partials/
+    }
+}
+
+plugin.tx_nldmailsubscription_sform {
+    view {
+        templateRootPath = EXT:nl_countryportal/Resources/Private/Templates/
+        partialRootPath = EXT:nl_countryportal/Resources/Private/Partials/Subscription/
+        layoutRootPath = EXT:nl_countryportal/Resources/Private/Layouts/Subscription/
+    }
+}

@@ -1,0 +1,65 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+  <f:layout name="Content"/>
+
+  <f:section name="Configuration">
+    <flux:form id="titleAndText">
+      <flux:form.option.group value="flux"/>
+      <flux:form.option.icon value="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/content/content-header.svg"/>
+      <flux:field.input name="title" required="1"/>
+      <flux:field.text name="text" enableRichText="1"/>
+      <flux:field.select name="displayAs" default="centered" items="{
+                0:{0:'Centered', 1:'centered'},
+                1:{0:'As two columns', 1:'2columns'}
+            }"/>
+    </flux:form>
+  </f:section>
+
+  <f:section name="Preview">
+    <div>
+      <strong>{f:translate(key: 'flux.titleAndText')}</strong>
+    </div>
+    <div>
+      {displayAs}
+    </div>
+    <div>
+      {title}
+    </div>
+    <div>
+      {text -> f:format.html()}
+    </div>
+  </f:section>
+
+  <f:section name="Main">
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 mx-auto">
+        <f:if condition="{displayAs} == 'centered'">
+          <f:then>
+            <div class="flex flex-col text-center w-full">
+              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+                {title}
+              </h1>
+              <div class="lg:w-2/3 mx-auto leading-relaxed text-base">
+                {text -> f:format.html()}
+              </div>
+            </div>
+          </f:then>
+          <f:else>
+            <div class="flex flex-wrap w-full">
+              <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+                  {title}
+                </h1>
+              </div>
+              <div class="lg:w-1/2 w-full leading-relaxed text-gray-500">
+                {text -> f:format.html()}
+              </div>
+            </div>
+          </f:else>
+        </f:if>
+      </div>
+    </section>
+  </f:section>
+</div>

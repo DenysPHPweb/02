@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2021-01-04T13:29:27Z" product-name="nl_countryportal">
+        <header />
+        <body>
+            <trans-unit id="flux.onecolumn">
+                <source>One Column</source>
+            </trans-unit>
+            <trans-unit id="sitename">
+                <source>Country Portal</source>
+            </trans-unit>
+
+            <trans-unit id="footer.cities">
+                <source>CITIES</source>
+            </trans-unit>
+            <trans-unit id="footer.places">
+                <source>PLACES</source>
+            </trans-unit>
+            <trans-unit id="footer.external">
+                <source>EXTERNAL</source>
+            </trans-unit>
+            <trans-unit id="footer.subscribe">
+                <source>SUBSCRIBE</source>
+            </trans-unit>
+
+            <trans-unit id="cookiePolicy.title">
+                <source>Cookie Policy</source>
+            </trans-unit>
+            <trans-unit id="cookiePolicy.text">
+                <source>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus maximus condimentum libero. Nulla tempus metus sit amet sagittis tempus. Donec maximus odio nibh, ut congue ante dictum suscipit.</source>
+            </trans-unit>
+            <trans-unit id="cookiePolicy.agree">
+                <source>I agree</source>
+            </trans-unit>
+
+            <trans-unit id="flux.newContentWizard.flux">
+                <source>Country-Portal Custom CE</source>
+            </trans-unit>
+            <trans-unit id="flux.hero">
+                <source>Hero</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.images">
+                <source>Image</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.greenButtonText">
+                <source>Green button text</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.greenButtonLink">
+                <source>Green button link</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.grayButtonText">
+                <source>Gray button text</source>
+            </trans-unit>
+            <trans-unit id="flux.hero.fields.grayButtonLink">
+                <source>Gray button link</source>
+            </trans-unit>
+
+            <trans-unit id="flux.titleAndText">
+                <source>Title And Text</source>
+            </trans-unit>
+            <trans-unit id="flux.titleAndText.fields.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="flux.titleAndText.fields.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="flux.titleAndText.fields.displayAs">
+                <source>Display</source>
+            </trans-unit>
+
+            <trans-unit id="flux.oneColumnWithCardImageAndText">
+                <source>One Column With Image And Text</source>
+            </trans-unit>
+
+            <trans-unit id="flux.facts">
+                <source>Facts</source>
+            </trans-unit>
+            <trans-unit id="flux.facts.objects.fact">
+                <source>Fact</source>
+            </trans-unit>
+            <trans-unit id="flux.facts.objects.fact.svg">
+                <source>SVG</source>
+            </trans-unit>
+            <trans-unit id="flux.facts.objects.fact.number">
+                <source>Number</source>
+            </trans-unit>
+            <trans-unit id="flux.facts.objects.fact.title">
+                <source>Title</source>
+            </trans-unit>
+
+            <trans-unit id="flux.testimonials">
+                <source>Testimonials</source>
+            </trans-unit>
+            <trans-unit id="flux.testimonials.objects.testimonial">
+                <source>testimonial</source>
+            </trans-unit>
+            <trans-unit id="flux.testimonials.objects.testimonial.svg">
+                <source>SVG</source>
+            </trans-unit>
+            <trans-unit id="flux.testimonials.objects.testimonial.text">
+                <source>Text</source>
+            </trans-unit>
+            <trans-unit id="flux.testimonials.objects.testimonial.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="flux.testimonials.objects.testimonial.authorLink">
+                <source>Author link</source>
+            </trans-unit>
+
+            <trans-unit id="flux.tabs">
+                <source>Tabs</source>
+            </trans-unit>
+            <trans-unit id="flux.tabs.sheets.tab0">
+                <source>History</source>
+            </trans-unit>
+            <trans-unit id="flux.tabs.sheets.tab1">
+                <source>Culture</source>
+            </trans-unit>
+            <trans-unit id="flux.tabs.sheets.tab2">
+                <source>Economy</source>
+            </trans-unit>
+
+            <trans-unit id="flux.gallery">
+                <source>Gallery</source>
+            </trans-unit>
+            <trans-unit id="flux.gallery.fields.images">
+                <source>Images</source>
+            </trans-unit>
+
+            <trans-unit id="flux.twoColumns7030">
+                <source>Two Columns</source>
+            </trans-unit>
+
+            <trans-unit id="flux.newsletter">
+                <source>Newsletter</source>
+            </trans-unit>
+
+            <trans-unit id="footer.newsletterSubscription">
+                <source>NEWSLETTER SUBSCRIPTION</source>
+            </trans-unit>
+
+            <trans-unit id="newsletter.unsubscribeLinkLabel">
+                <source>Unsubscribe link</source>
+            </trans-unit>
+
+            <trans-unit id="flux.googleMap">
+                <source>Google Map</source>
+            </trans-unit>
+            <trans-unit id="flux.googleMap.fields.address">
+                <source>ADDRESS</source>
+            </trans-unit>
+            <trans-unit id="flux.googleMap.fields.email">
+                <source>EMAIL</source>
+            </trans-unit>
+            <trans-unit id="flux.googleMap.fields.phone">
+                <source>PHONE</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

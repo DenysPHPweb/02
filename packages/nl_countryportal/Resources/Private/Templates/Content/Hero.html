@@ -1,0 +1,70 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+  <f:layout name="Content" />
+
+  <f:section name="Configuration">
+    <flux:form id="hero">
+      <flux:form.option.group value="flux" />
+      <flux:form.option.icon value="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/content/content-menu-card.svg"/>
+
+      <flux:field.input name="title" required="1" />
+      <flux:field.text name="text" enableRichText="1"/>
+      <flux:field.inline.fal name="images" maxItems="1" allowedExtensions="gif,jpg,jpeg,png,svg" collapseAll="true" required="1" />
+      <flux:field.input name="greenButtonText" />
+      <flux:field.input name="greenButtonLink" config="{renderType: 'inputLink'}"/>
+      <flux:field.input name="grayButtonText" />
+      <flux:field.input name="grayButtonLink" config="{renderType: 'inputLink'}"/>
+    </flux:form>
+  </f:section>
+
+  <f:section name="Preview">
+    <div>
+      <strong>{f:translate(key: 'flux.hero')}</strong>
+    </div>
+    <div>
+      {title}
+    </div>
+    <div>
+      {text -> f:format.html()}
+    </div>
+  </f:section>
+
+  <f:section name="Main">
+    <section class="text-gray-600 body-font">
+      <div class="container mx-auto flex px-5 md:flex-row flex-col items-center">
+        <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+            {title}
+          </h1>
+          <f:if condition="{text}">
+            <div class="mb-8 leading-relaxed">
+              {text -> f:format.html()}
+            </div>
+          </f:if>
+          <div class="flex justify-center">
+            <f:if condition="{greenButtonText} && {greenButtonLink}">
+              <f:link.typolink parameter="{greenButtonLink}" class="inline-flex text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+                {greenButtonText}
+              </f:link.typolink>
+            </f:if>
+            <f:if condition="{grayButtonText} && {grayButtonLink}">
+              <f:link.typolink parameter="{grayButtonLink}" class="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                {grayButtonText}
+              </f:link.typolink>
+            </f:if>
+          </div>
+        </div>
+        <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+          <f:if condition="{images}">
+            {v:content.resources.fal(field: 'images')
+            -> v:iterator.first()
+            -> v:variable.set(name: 'image')}
+            <img class="object-cover object-center rounded"
+                 alt="{image.alternative}"
+                 src="{v:uri.image(src: image.uid, quality:87, maxH: 600, treatIdAsReference: 1, crop: image.crop)}">
+          </f:if>
+        </div>
+      </div>
+    </section>
+  </f:section>
+</div>

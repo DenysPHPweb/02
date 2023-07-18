@@ -1,0 +1,51 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers" xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+  <f:layout name="Content" />
+
+  <f:section name="Configuration">
+    <flux:form id="facts">
+      <flux:form.option.group value="flux" />
+      <flux:form.option.icon value="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/content/content-widget-chart-bar.svg"/>
+
+      <flux:form.section name="facts">
+        <flux:form.object name="fact">
+          <flux:field.text name="svg" required="1" />
+          <flux:field.input name="number" required="1" />
+          <flux:field.input name="title" required="1" />
+        </flux:form.object>
+      </flux:form.section>
+
+    </flux:form>
+  </f:section>
+
+  <f:section name="Preview">
+    <div>
+      <strong>{f:translate(key: 'flux.facts')}</strong>
+    </div>
+    <div>
+      <f:for each="{facts}" as="sectionObjects">
+        <div>{sectionObjects.fact.title}: {sectionObjects.fact.number}</div>
+      </f:for>
+    </div>
+  </f:section>
+
+  <f:section name="Main">
+
+    <div class="flex flex-wrap -m-4 text-center">
+      <f:for each="{facts}" as="sectionObjects">
+        <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+          <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
+            <f:format.raw>{sectionObjects.fact.svg}</f:format.raw>
+            <h2 class="title-font font-medium text-3xl text-gray-900">
+              {sectionObjects.fact.number}
+            </h2>
+            <p class="leading-relaxed">
+              {sectionObjects.fact.title}
+            </p>
+          </div>
+        </div>
+      </f:for>
+    </div>
+
+  </f:section>
+</div>

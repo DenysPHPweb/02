@@ -1,0 +1,42 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+			data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<section class="text-gray-600 body-font overflow-hidden">
+		<div class="container px-5 mx-auto">
+			<f:if condition="{news}">
+				<f:then>
+					<!-- Display only TOP news first -->
+					<div class="flex flex-wrap -m-12 mb-12">
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:if condition="{newsItem.istopnews}">
+								<f:render partial="News/TopItem" arguments="{_all}" />
+							</f:if>
+						</f:for>
+					</div>
+					<!-- Display normal news -->
+					<div class="-my-8 divide-y-2 divide-gray-100">
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:if condition="{newsItem.istopnews} == false">
+								<f:render partial="News/Item" arguments="{_all}" />
+							</f:if>
+						</f:for>
+					</div>
+				</f:then>
+				<f:else>
+					<div class="no-news-found">
+						<f:translate key="list_nonewsfound" />
+					</div>
+				</f:else>
+			</f:if>
+		</div>
+	</section>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

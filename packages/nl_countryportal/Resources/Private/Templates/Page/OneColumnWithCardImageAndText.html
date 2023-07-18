@@ -1,0 +1,20 @@
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+  <flux:form id="oneColumnWithCardImageAndText">
+    <flux:form.sheet name="settings.card" label="Card">
+      <flux:field.inline.fal name="settings.cardImage" label="Card - Image" maxItems="1" allowedExtensions="png,jpg,svg,jpeg" collapseAll="true" />
+      <flux:field.text name="settings.cardText" label="Card - Text " enableRichText="0" />
+    </flux:form.sheet>
+
+    <flux:grid>
+      <flux:grid.row>
+        <flux:grid.column colPos="0" name="main" label="Main" colspan="12" />
+      </flux:grid.row>
+    </flux:grid>
+  </flux:form>
+</f:section>
+
+<f:section name="Main">
+  <v:content.render column="0" />
+</f:section>

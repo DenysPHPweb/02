@@ -1,0 +1,38 @@
+<div class="py-8 flex flex-wrap md:flex-nowrap">
+  <div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+    <f:if condition="{newsItem.firstCategory}">
+            <span class="text-green-500 text-xs font-medium tracking-widest">
+                {newsItem.firstCategory.title}
+            </span>
+    </f:if>
+    <span class="text-gray-400 mt-1 inline-block leading-none text-sm py-1">
+            <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'d.m.Y')}">
+                <f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+            </time>
+        </span>
+  </div>
+  <div class="md:flex-grow">
+    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+      {newsItem.title}
+    </h2>
+
+    <n:removeMediaTags>
+      <f:if condition="{newsItem.teaser}">
+        <f:then>
+          <div class="leading-relaxed mb-8">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+        </f:then>
+        <f:else>
+          <div class="leading-relaxed mb-8">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+        </f:else>
+      </f:if>
+    </n:removeMediaTags>
+
+    <n:link newsItem="{newsItem}" settings="{settings}" class="text-green-500 inline-flex items-center" title="{newsItem.title}">
+      <f:translate key="more-link"/>
+      <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"></path>
+        <path d="M12 5l7 7-7 7"></path>
+      </svg>
+    </n:link>
+  </div>
+</div>

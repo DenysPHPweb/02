@@ -1,0 +1,29 @@
+{namespace is=TYPO3\CMS\IndexedSearch\ViewHelpers}
+
+<f:for each="{resultsets}" as="result">
+  <f:if condition="{result.count} > 0">
+    <f:then>
+      <div>
+        <f:for each="{searchWords}" as="searchWord" key="key">
+          <h2 class="text-2xl font-medium text-gray-900 title-font">
+            <f:translate key="searchFor" />&nbsp;{searchWord.sword}
+          </h2>
+          <br>
+        </f:for>
+      </div>
+      <div>
+        <f:for each="{result.rows}" as="row">
+          <div class="pt-8">
+            <div class="text-lg text-gray-900 font-medium title-font">{row.title -> f:format.raw()}</div>
+            <div class="leading-relaxed">{row.description -> f:format.raw()}</div><br>
+          </div>
+        </f:for>
+      </div>
+    </f:then>
+    <f:else>
+      <div class="tx-indexedsearch-info-noresult">
+        <f:translate key="result.noResult" />
+      </div>
+    </f:else>
+  </f:if>
+</f:for>

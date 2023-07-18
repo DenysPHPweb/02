@@ -1,0 +1,62 @@
+<div xmlns="http://www.w3.org/1999/xhtml" lang="en" xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+     xmlns:flux="http://typo3.org/ns/FluidTYPO3/Flux/ViewHelpers"
+     xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers">
+
+  <f:layout name="Content"/>
+
+  <f:section name="Configuration">
+    <flux:form id="gallery">
+      <flux:form.option.group value="flux"/>
+      <flux:form.option.icon
+              value="/typo3/sysext/core/Resources/Public/Icons/T3Icons/svgs/content/content-gallery.svg"/>
+
+      <flux:field.inline.fal name="images" maxItems="6" allowedExtensions="gif,jpg,jpeg,png,svg" collapseAll="true"
+                             required="1"/>
+    </flux:form>
+  </f:section>
+
+  <f:section name="Preview">
+    <div>
+      <strong>{f:translate(key: 'flux.gallery')}</strong>
+    </div>
+  </f:section>
+
+  <f:section name="Main">
+    <div class="container px-5 mx-auto flex flex-wrap">
+      <div class="flex flex-wrap md:-m-2 -m-1">
+        {v:content.resources.fal(field: 'images') -> v:variable.set(name: 'images')}
+
+        <f:for each="{images}" as="image" iteration="iterator">
+          <f:if condition="{iterator.index} == 0 || {iterator.index} == 3">
+            <div class="flex flex-wrap w-1/2">
+          </f:if>
+
+          <f:if condition="{iterator.index} == 2 || {iterator.index} == 3">
+            <f:then>
+              <div class="md:p-2 p-1 w-full">
+                <img class="w-full h-full object-cover rounded object-center block"
+                     src="{v:uri.image(src: image.uid, quality: 87, maxH: 600, treatIdAsReference: 1, crop: image.crop)}"
+                     alt="{image.alternative}">
+              </div>
+            </f:then>
+            <f:else>
+              <div class="md:p-2 p-1 w-1/2">
+                <img class="w-full h-full object-cover rounded object-center block"
+                     src="{v:uri.image(src: image.uid, quality: 87, maxW: 500, treatIdAsReference: 1, crop: image.crop)}"
+                     alt="{image.alternative}">
+              </div>
+            </f:else>
+          </f:if>
+
+          <f:if condition="{iterator.index} == 2 || {iterator.index} == 5">
+      </div>
+      </f:if>
+      </f:for>
+
+    </div>
+</div>
+</f:section>
+
+
+</div>
+

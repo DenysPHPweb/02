@@ -1,0 +1,18 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+
+  <f:if condition="{menu}">
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 mx-auto">
+        <div class="flex flex-wrap -m-4">
+          <f:for each="{menu}" as="item">
+            <f:render partial="CityCard" arguments="{cityPage: item.data}" />
+          </f:for>
+        </div>
+      </div>
+    </section>
+  </f:if>
+
+</f:section>
+</html>

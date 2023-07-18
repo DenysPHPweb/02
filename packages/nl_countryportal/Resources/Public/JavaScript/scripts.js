@@ -1,0 +1,1 @@
+function createCookiesEuBanner(){return{show:localStorage.getItem("show_cookies-eu-banner")||!0,hideBanner(){return localStorage.setItem("show_cookies-eu-banner",!1),this.show=!1,!1}}}

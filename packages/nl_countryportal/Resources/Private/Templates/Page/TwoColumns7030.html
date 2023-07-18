@@ -1,0 +1,25 @@
+<f:layout name="Page" />
+
+<f:section name="Configuration">
+  <flux:form id="twoColumns7030">
+    <flux:grid>
+      <flux:grid.row>
+        <flux:grid.column colPos="0" name="col1" label="Column 1" colspan="8" />
+        <flux:grid.column colPos="1" name="col2" label="Column 2" colspan="4" />
+      </flux:grid.row>
+    </flux:grid>
+  </flux:form>
+</f:section>
+
+<f:section name="Main">
+  <section class="text-gray-600 body-font relative">
+    <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap">
+      <div class=" bg-gray-300 lg:w-2/3 md:w-1/2 rounded-lg overflow-hidden sm:mr-10 p-10 flex items-end justify-start relative">
+        <v:content.render column="0" />
+      </div>
+      <div class="lg:w-1/3 md:w-1/2 flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+        <v:content.render column="1" />
+      </div>
+    </div>
+  </section>
+</f:section>

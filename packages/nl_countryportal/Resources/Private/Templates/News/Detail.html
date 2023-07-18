@@ -1,0 +1,53 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+			xmlns:rx="http://typo3.org/ns/Reelworx/RxShariff/ViewHelper"
+			data-namespace-typo3-fluid="true">
+
+<f:layout name="Detail" />
+
+<!--
+	=====================
+		News/Detail.html
+-->
+
+<f:section name="content">
+	<f:if condition="{newsItem}">
+
+		<section class="text-gray-600 body-font">
+			<div class="container px-5 mx-auto">
+				<div class="flex flex-col text-center w-full mb-20">
+					<f:if condition="{newsItem.firstCategory}">
+						<span class="text-xs text-green-500 tracking-widest font-medium title-font mb-1">
+							{newsItem.firstCategory.title}
+						</span>
+					</f:if>
+
+					<span class="text-gray-400 inline-block leading-none text-sm py-1">
+						<time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'d.m.Y')}">
+							<f:format.date format="d.m.Y">{newsItem.datetime}</f:format.date>
+						</time>
+					</span>
+
+					<h1 class="text-3xl md:text-4xl lg:text-5xl font-medium title-font mt-8 mb-16 text-gray-900">
+						{newsItem.title}
+					</h1>
+
+					<div class="lg:w-2/3 mx-auto leading-relaxed text-base text-left">
+						<f:format.html>{newsItem.bodytext}</f:format.html>
+					</div>
+
+					<f:if condition="{settings.backPid}">
+						<!-- Link Back -->
+						<div class="news-backlink-wrap">
+							<f:link.page pageUid="{settings.backPid}" class="text-green-500 inline-flex items-center">
+								<f:translate key="back-link" />
+							</f:link.page>
+						</div>
+					</f:if>
+				</div>
+			</div>
+		</section>
+
+	</f:if>
+</f:section>
+</html>
